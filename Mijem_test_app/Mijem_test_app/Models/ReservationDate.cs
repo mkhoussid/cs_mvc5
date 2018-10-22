@@ -13,6 +13,8 @@ namespace Mijem_test_app.Models
 */
     public class ReservationDate
     {
+        //key
+        public int Id { get; set; }
         //location
         public Reservation Reservation { get; set; }
         //contact
