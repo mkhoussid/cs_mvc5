@@ -25,6 +25,7 @@ namespace Mijem_test_app
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-minty.css",
+                      "~/Content/w3_demo.css",
                       "~/Content/site.css"));
         }
     }

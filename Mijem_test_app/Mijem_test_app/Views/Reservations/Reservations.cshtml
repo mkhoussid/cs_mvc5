@@ -4,5 +4,28 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Reservations</h2>
+<header style="padding-bottom: 15px;" role="banner">
+    <img src="~/Content/asset_banner.jpg" class="img-responsive center_banner" alt="Banner Image" />
+    <img src="~/Content/asset_banner_mobile.jpg" class="img-responsive mobile center_banner" alt="Banner Image" />
+</header>
 
+<div class="w3-container row" style="background-color:#fff;padding-top: 15px;">
+    <div class="column">
+        <h2>Reservation List</h2>
+    </div>
+    <div class="column">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+    </div>
+    <div class="column">
+        <input type="button" value="Create Reservation" class="btn btn-primary column_button" onclick='window.location.href = @Url.Action("NewReservation","Reservations")' />
+    </div>
+</div>
+
+
+
+
+<section>
+    <h2></h2>
+</section>

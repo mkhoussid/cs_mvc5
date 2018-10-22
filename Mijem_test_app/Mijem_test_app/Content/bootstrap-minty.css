@@ -197,6 +197,37 @@ a {
             outline: 0;
         }
 
+
+
+
+.center_banner {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.img-responsive.mobile {
+    display: none;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .img-responsive {
+        display: none;
+    }
+    .img-responsive.mobile {
+        display: block;
+    }
+}
+
+.column_demo {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+}
+
+
+
 pre,
 code,
 kbd,
