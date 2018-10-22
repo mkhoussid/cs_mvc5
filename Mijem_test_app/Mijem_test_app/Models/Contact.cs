@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -16,8 +17,8 @@ namespace Mijem_test_app.Models
         [StringLength(255)]
         public string ContactType { get; set; }
         [Required]
-        public int ContactNumber { get; set; }
-        [Required]
+        public long ContactNumber { get; set; }
+        [Column(TypeName = "date")]
         public DateTime BirthDate { get; set; }
     }
 }

@@ -21,5 +21,7 @@ namespace Mijem_test_app.Models
         public Contact Contact { get; set; }
         //date reserved for
         public DateTime ReservedDate { get; set; }
+
+        //here we are also going to look to see if the venue is already booked. if it is, then another user cannot reserve it
     }
 }

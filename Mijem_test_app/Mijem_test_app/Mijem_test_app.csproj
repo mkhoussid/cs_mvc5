@@ -200,6 +200,34 @@
     <Compile Include="Migrations\201810222003222_InitialMigration.Designer.cs">
       <DependentUpon>201810222003222_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810222022438_SeeDListOfAllVenues.cs" />
+    <Compile Include="Migrations\201810222022438_SeeDListOfAllVenues.Designer.cs">
+      <DependentUpon>201810222022438_SeeDListOfAllVenues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810222047412_RenameVenueNames.cs" />
+    <Compile Include="Migrations\201810222047412_RenameVenueNames.Designer.cs">
+      <DependentUpon>201810222047412_RenameVenueNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810222055461_ChangeDataTypeOfPhoneNumber.cs" />
+    <Compile Include="Migrations\201810222055461_ChangeDataTypeOfPhoneNumber.Designer.cs">
+      <DependentUpon>201810222055461_ChangeDataTypeOfPhoneNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810222102073_DeleteContacts.cs" />
+    <Compile Include="Migrations\201810222102073_DeleteContacts.Designer.cs">
+      <DependentUpon>201810222102073_DeleteContacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810222104488_ChangeDatabaseColumn.cs" />
+    <Compile Include="Migrations\201810222104488_ChangeDatabaseColumn.Designer.cs">
+      <DependentUpon>201810222104488_ChangeDatabaseColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810222105103_AddSomeContacts.cs" />
+    <Compile Include="Migrations\201810222105103_AddSomeContacts.Designer.cs">
+      <DependentUpon>201810222105103_AddSomeContacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810222117317_AddSomeExistingReservations.cs" />
+    <Compile Include="Migrations\201810222117317_AddSomeExistingReservations.Designer.cs">
+      <DependentUpon>201810222117317_AddSomeExistingReservations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -291,6 +319,27 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810222003222_InitialMigration.resx">
       <DependentUpon>201810222003222_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810222022438_SeeDListOfAllVenues.resx">
+      <DependentUpon>201810222022438_SeeDListOfAllVenues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810222047412_RenameVenueNames.resx">
+      <DependentUpon>201810222047412_RenameVenueNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810222055461_ChangeDataTypeOfPhoneNumber.resx">
+      <DependentUpon>201810222055461_ChangeDataTypeOfPhoneNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810222102073_DeleteContacts.resx">
+      <DependentUpon>201810222102073_DeleteContacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810222104488_ChangeDatabaseColumn.resx">
+      <DependentUpon>201810222104488_ChangeDatabaseColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810222105103_AddSomeContacts.resx">
+      <DependentUpon>201810222105103_AddSomeContacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810222117317_AddSomeExistingReservations.resx">
+      <DependentUpon>201810222117317_AddSomeExistingReservations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
