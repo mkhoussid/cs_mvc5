@@ -3901,7 +3901,7 @@
             return img.length > 0 && img.is(":visible");
         }
 
-        if (/^(input|select|textarea|button|object)$/.test(nodeName)) {
+        if (/^(input|select|button|object)$/.test(nodeName)) {
             focusableIfVisible = !element.disabled;
 
             if (focusableIfVisible) {
@@ -5634,16 +5634,16 @@
             // search term. #7799
             var suppressKeyPress, suppressKeyPressRepeat, suppressInput,
                 nodeName = this.element[0].nodeName.toLowerCase(),
-                isTextarea = nodeName === "textarea",
+                //isTextarea = nodeName === "textarea",
                 isInput = nodeName === "input";
 
             // Textareas are always multi-line
             // Inputs are always single-line, even if inside a contentEditable element
             // IE also treats inputs as contentEditable
             // All other element types are determined by whether or not they're contentEditable
-            this.isMultiLine = isTextarea || !isInput && this._isContentEditable(this.element);
+            //this.isMultiLine = isTextarea || !isInput && this._isContentEditable(this.element);
 
-            this.valueMethod = this.element[isTextarea || isInput ? "val" : "text"];
+            //this.valueMethod = this.element[isTextarea || isInput ? "val" : "text"];
             this.isNewMenu = true;
 
             this._addClass("ui-autocomplete-input");
@@ -9301,7 +9301,7 @@
     var widgetsMouse = $.widget("ui.mouse", {
         version: "1.12.1",
         options: {
-            cancel: "input, textarea, button, select, option",
+            cancel: "input, button, select, option",
             distance: 1,
             delay: 0
         },
@@ -10861,7 +10861,7 @@
             });
 
             // Wrap the element if it cannot hold child nodes
-            if (this.element[0].nodeName.match(/^(canvas|textarea|input|select|button|img)$/i)) {
+            if (this.element[0].nodeName.match(/^(canvas|input|select|button|img)$/i)) {
 
                 this.element.wrap(
                     $("<div class='ui-wrapper' style='overflow: hidden;'></div>").css({
@@ -11037,7 +11037,7 @@
                     if (this.elementIsWrapper &&
                         this.originalElement[0]
                             .nodeName
-                            .match(/^(textarea|input|select|button)$/i)) {
+                            .match(/^(input|select|button)$/i)) {
                         axis = $(this.handles[i], this.element);
 
                         padWrapper = /sw|ne|nw|se|n|s/.test(i) ?

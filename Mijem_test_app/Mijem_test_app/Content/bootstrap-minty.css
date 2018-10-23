@@ -299,8 +299,8 @@ button {
 input,
 button,
 select,
-optgroup,
-textarea {
+optgroup
+ {
     margin: 0;
     font-family: inherit;
     font-size: inherit;
@@ -346,10 +346,7 @@ input[type="month"] {
     -webkit-appearance: listbox;
 }
 
-textarea {
-    overflow: auto;
-    resize: vertical;
-}
+
 
 fieldset {
     min-width: 0;
@@ -2305,9 +2302,7 @@ select.form-control[size], select.form-control[multiple] {
     height: auto;
 }
 
-textarea.form-control {
-    height: auto;
-}
+
 
 .form-group {
     margin-bottom: 1rem;

@@ -103,7 +103,7 @@ hr {
     overflow: visible
 }
 
-button, input, select, textarea {
+button, input, select {
     font: inherit;
     margin: 0
 }
@@ -147,9 +147,7 @@ legend {
     white-space: normal
 }
 
-textarea {
-    overflow: auto
-}
+
 
 [type=checkbox], [type=radio] {
     padding: 0

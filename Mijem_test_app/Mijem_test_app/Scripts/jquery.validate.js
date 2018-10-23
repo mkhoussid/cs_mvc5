@@ -348,7 +348,7 @@ $.extend($.validator, {
 				}
 			}
 			$(this.currentForm)
-				.validateDelegate(":text, [type='password'], [type='file'], select, textarea, " +
+				.validateDelegate(":text, [type='password'], [type='file'], select, " +
 					"[type='number'], [type='search'] ,[type='tel'], [type='url'], " +
 					"[type='email'], [type='datetime'], [type='date'], [type='month'], " +
 					"[type='week'], [type='time'], [type='datetime-local'], " +
@@ -488,7 +488,7 @@ $.extend($.validator, {
 
 			// select all valid inputs inside the form (no submit or reset buttons)
 			return $(this.currentForm)
-			.find("input, select, textarea")
+			.find("input, select")
 			.not(":submit, :reset, :image, [disabled]")
 			.not( this.settings.ignore )
 			.filter(function() {

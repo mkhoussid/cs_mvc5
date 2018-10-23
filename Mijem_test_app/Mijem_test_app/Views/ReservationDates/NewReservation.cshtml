@@ -2,8 +2,11 @@
 
 @{
     ViewBag.Title = "Create a Reservation";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutReservation.cshtml";
 }
+
+
+
 
 <div class="w3-container row" style="background-color:#fff;padding-top: 15px; margin-bottom: 10px;">
     <div class="column">
@@ -20,6 +23,8 @@
     </div>
 </div>
 
+
+
 @using (Html.BeginForm("NewReservation", "ReservationDates"))
 {
     <div class="row-contact" style="background-color:#fff;padding-top: 15px;">
@@ -27,26 +32,26 @@
             @Html.EditorFor(m => m.Name, new
             {
                 htmlAttributes =
-                         new
-                         {
-                             @class = "form-control",
-                             style = "background:#FFFFFF url(https://i.imgur.com/XVEmIjP.png) no-repeat 4px 4px;padding-left:30px;float: left;margin-right: 5px;",
-                             placeholder = @Html.DisplayNameFor(m => m.Name)
-                         }
+                                        new
+                                        {
+                                            @class = "form-control",
+                                            style = "background:#FFFFFF url(https://i.imgur.com/XVEmIjP.png) no-repeat 4px 4px;padding-left:30px;float: left;margin-right: 5px;",
+                                            placeholder = @Html.DisplayNameFor(m => m.Name)
+                                        }
             })
         </div>
         <div>
             @Html.EditorFor(m => m.ContactType, new
             {
                 htmlAttributes =
-                         new
-                         {
-                             @class = "form-control",
-                             list = "contactType",
-                             name = "contactType",
-                             style = "background:#FFFFFF url(https://i.imgur.com/Bchv5Vl.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 30%;margin-right: 5px;",
-                             placeholder = @Html.DisplayNameFor(m => m.ContactType)
-                         }
+                                        new
+                                        {
+                                            @class = "form-control",
+                                            list = "contactType",
+                                            name = "contactType",
+                                            style = "background:#FFFFFF url(https://i.imgur.com/Bchv5Vl.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 30%;margin-right: 5px;",
+                                            placeholder = @Html.DisplayNameFor(m => m.ContactType)
+                                        }
             })
             <datalist id="contactType">
                 <option value="Home">
@@ -58,29 +63,48 @@
             @Html.EditorFor(m => m.ContactNumber, new
             {
                 htmlAttributes =
-                         new
-                         {
-                             @class = "form-control",
-                             style = "background:#FFFFFF url(https://i.imgur.com/zPUpbEt.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 30%;margin-right: 5px;",
-                             placeholder = @Html.DisplayNameFor(m => m.ContactNumber),
-                             type = "tel"
-                         }
+                                        new
+                                        {
+                                            @class = "form-control",
+                                            style = "background:#FFFFFF url(https://i.imgur.com/zPUpbEt.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 30%;margin-right: 5px;",
+                                            placeholder = @Html.DisplayNameFor(m => m.ContactNumber),
+                                            type = "tel"
+                                        }
             })
         </div>
         <div>
             @Html.EditorFor(m => m.BirthDate, new
             {
                 htmlAttributes =
-                         new
-                         {
-                             @class = "form-control",
-                             @id = "datepicker",
-                             name = "BirthDate",
-                             style = "background:#FFFFFF url(https://i.imgur.com/Vpa8zkj.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 10%;",
-                             placeholder = @Html.DisplayNameFor(m => m.BirthDate)
-                         }
+                                        new
+                                        {
+                                            @class = "form-control",
+                                            @id = "datepicker",
+                                            name = "BirthDate",
+                                            style = "background:#FFFFFF url(https://i.imgur.com/Vpa8zkj.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 10%;",
+                                            placeholder = @Html.DisplayNameFor(m => m.BirthDate)
+                                        }
             })
         </div>
+    </div><br /><br />
+    <div>
+        <textarea placeholder="Please add some details to this reservation..." name="content" id="editor"></textarea>
     </div>
-    
+    <button style="margin-top: 15px; float:right; background: red;" class="btn btn-success">Save</button>
 }
+
+<script>
+    $(function () {
+        $("#datepicker").datepicker();
+    });
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
+
+
+
+
