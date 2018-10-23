@@ -1,0 +1,172 @@
+﻿@model IEnumerable<Mijem_test_app.Models.ReservationDate>
+@{
+    ViewBag.Title = "List of Reservations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header style="padding-bottom: 15px;" role="banner">
+    <img src="~/Content/asset_banner.jpg" class="img-responsive center_banner" alt="Banner Image" />
+    <img src="~/Content/asset_banner_mobile.jpg" class="img-responsive mobile center_banner" alt="Banner Image" />
+</header>
+
+<div class="w3-container row" style="background-color:#fff;padding-top: 15px;">
+    <div class="column">
+        <h2 style="color: red; font-size:2em">Reservation List</h2>
+    </div>
+    <div class="column">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+    </div>
+    <div class="column">
+        <input type="button" value="Create Reservation" class="btn btn-primary column_button" onclick="@("window.location.href='" + @Url.Action("NewReservation", "Reservations") + "'");" />
+    </div>
+</div>
+
+@*<div class="tr" style="background-color:#f1f1f1;">
+        <div class="td0">Please rate this school</div>
+        <div class="td">@Html.Partial("_VoteNow", Model.AutoId.ToString())</div>
+        <div class="td">@Html.Partial("_VoteShow", Model.Votes)</div>
+    </div>*@
+
+
+<table class="table table-bordered table-hover">
+    <tbody>
+    @foreach (var reservation in Model)
+    {
+        <tr>
+            <td>
+                <span class="name-td">@reservation.Reservation.Name</span>
+                <span class="subtext-td">@reservation.ReservedDate</span>
+            </td>
+            <td>
+                <span class="name-td">Ranking</span>
+                <span class="subtext-td">
+                    @{
+                        switch (reservation.Reservation.Ranking)
+                        {
+                            case 1:
+                                <span class="row">
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/empty_star.gif" alt="Empty Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/empty_star.gif" alt="Empty Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/empty_star.gif" alt="Empty Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/empty_star.gif" alt="Empty Star" style="width:100%">
+                                    </span>
+                                </span>
+                                break;
+                            case 2:
+                                <span class="row">
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/empty_star.gif" alt="Empty Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/empty_star.gif" alt="Empty Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/empty_star.gif" alt="Empty Star" style="width:100%">
+                                    </span>
+                                </span>
+                                break;
+                            case 3:
+                                <span class="row">
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/empty_star.gif" alt="Empty Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/empty_star.gif" alt="Empty Star" style="width:100%">
+                                    </span>
+                                </span>
+                                break;
+                            case 4:
+                                <span class="row">
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/empty_star.gif" alt="Empty Star" style="width:100%">
+                                    </span>
+                                </span>
+                                break;
+                            case 5:
+                                <span class="row">
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                    <span class="column-stars">
+                                        <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width:100%">
+                                    </span>
+                                </span>
+                                break;
+                            default:
+                                <text>No rating available</text>
+                                break;
+                        }
+                    }
+                </span>
+            </td>
+            <td>
+                Added to Favorites 
+                <span style="white-space: nowrap;">
+                    @{
+                        if (@reservation.Reservation.Favorites)
+                        {
+                            <img src="~/Content/asset_favorite_true.jpg" alt="Favorite"/>
+                        }
+                        else
+                        {
+                            <img src="~/Content/asset_favorite_false.jpg" alt="Not Favorite"/>
+                        }
+                    }
+                </span>
+            </td>
+            <td>
+                <input type="button" value="Edit" class="btn btn-default column_button" onclick="@("window.location.href='" + @Url.Action("NewReservation", "Reservations") + "'");" />
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -15,7 +15,7 @@ namespace Mijem_test_app.Models
     {
         //key
         public int Id { get; set; }
-        //location
+        //location name
         public Reservation Reservation { get; set; }
         //contact
         public Contact Contact { get; set; }

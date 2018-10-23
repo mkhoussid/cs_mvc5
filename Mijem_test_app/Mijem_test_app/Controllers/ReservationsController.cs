@@ -9,12 +9,17 @@ namespace Mijem_test_app.Controllers
 {
     public class ReservationsController : Controller
     {
-        //instantiate db cursor
-        private ApplicationDbContext _context;
+
+
         // GET: Reservations
         public ActionResult Index()
         {
             return View("Reservations");
+        }
+
+        public ActionResult NewReservation()
+        {
+            return Content("Create Reservation");
         }
     }
 }

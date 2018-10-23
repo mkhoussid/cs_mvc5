@@ -100,6 +100,15 @@ p {
     margin-bottom: 1rem;
 }
 
+.name-td {
+    font-weight: bold;
+    display: block;
+}
+
+.subtext-td {
+    font-size: smaller;
+}
+
 abbr[title],
 abbr[data-original-title] {
     text-decoration: underline;

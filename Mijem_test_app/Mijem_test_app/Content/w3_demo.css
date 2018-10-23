@@ -257,7 +257,7 @@ a {
 }
 
     .w3-bordered tr, .w3-table-all tr {
-        border-bottom: 1px solid #ddd
+        border-bottom: 1px solid #eee8aa;
     }
 
 .w3-striped tbody tr:nth-child(even) {
@@ -1729,6 +1729,14 @@ a {
     width: 33.33%;
     padding: 10px;
     
+}
+
+.column-stars {
+    width: 10%;
+    padding-left: 10px;
+    max-height: 25px;
+    max-width: 25px;
+    display: block;
 }
 
 .column_button {

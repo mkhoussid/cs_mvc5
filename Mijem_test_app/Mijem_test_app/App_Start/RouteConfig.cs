@@ -16,7 +16,7 @@ namespace Mijem_test_app
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Reservations", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "ReservationDates", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
