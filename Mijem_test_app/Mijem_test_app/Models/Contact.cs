@@ -24,7 +24,7 @@ namespace Mijem_test_app.Models
         [Display(Name = "Phone:")]
         public long ContactNumber { get; set; }
         [Column(TypeName = "date")]
-        [Display(Name = "Birth Date")]
+        [Display(Name = "Birthdate")]
         public DateTime BirthDate { get; set; }
     }
 }
