@@ -4,9 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Mijem_test_app.Models
 {
+    [HandleError]
     public class Contact
     {
         public int Id { get; set; }

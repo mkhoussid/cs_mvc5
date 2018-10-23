@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Mijem_test_app.Models
 {
+    [HandleError]
     public class Reservation
     {
         //unique ID of location
