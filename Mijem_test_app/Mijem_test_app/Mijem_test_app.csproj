@@ -230,10 +230,59 @@
     <Compile Include="Migrations\201810222117317_AddSomeExistingReservations.Designer.cs">
       <DependentUpon>201810222117317_AddSomeExistingReservations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810231614457_AddedInforFromTextBoxColumn.cs" />
+    <Compile Include="Migrations\201810231614457_AddedInforFromTextBoxColumn.Designer.cs">
+      <DependentUpon>201810231614457_AddedInforFromTextBoxColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810231619044_ChangeReservationDateModelPropertyConstraints.cs" />
+    <Compile Include="Migrations\201810231619044_ChangeReservationDateModelPropertyConstraints.Designer.cs">
+      <DependentUpon>201810231619044_ChangeReservationDateModelPropertyConstraints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810231619479_UpdateRowsWithInfoFromTextBox.cs" />
+    <Compile Include="Migrations\201810231619479_UpdateRowsWithInfoFromTextBox.Designer.cs">
+      <DependentUpon>201810231619479_UpdateRowsWithInfoFromTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810231647150_AddRequiredAnnotationToInfoFromTextBoxProperty.cs" />
+    <Compile Include="Migrations\201810231647150_AddRequiredAnnotationToInfoFromTextBoxProperty.Designer.cs">
+      <DependentUpon>201810231647150_AddRequiredAnnotationToInfoFromTextBoxProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810231649586_AddImageModelAndImageURLFieldInReservationDates.cs" />
+    <Compile Include="Migrations\201810231649586_AddImageModelAndImageURLFieldInReservationDates.Designer.cs">
+      <DependentUpon>201810231649586_AddImageModelAndImageURLFieldInReservationDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810231654126_AddImagesToExistingRows.cs" />
+    <Compile Include="Migrations\201810231654126_AddImagesToExistingRows.Designer.cs">
+      <DependentUpon>201810231654126_AddImagesToExistingRows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810231658429_AddRequiredAnnotationToImageURL.cs" />
+    <Compile Include="Migrations\201810231658429_AddRequiredAnnotationToImageURL.Designer.cs">
+      <DependentUpon>201810231658429_AddRequiredAnnotationToImageURL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810231701333_AddImagesToImagesTable.cs" />
+    <Compile Include="Migrations\201810231701333_AddImagesToImagesTable.Designer.cs">
+      <DependentUpon>201810231701333_AddImagesToImagesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810231704519_AddImagesToExistingReservations.cs" />
+    <Compile Include="Migrations\201810231704519_AddImagesToExistingReservations.Designer.cs">
+      <DependentUpon>201810231704519_AddImagesToExistingReservations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810231712254_AddColumnImagesForReservationDates.cs" />
+    <Compile Include="Migrations\201810231712254_AddColumnImagesForReservationDates.Designer.cs">
+      <DependentUpon>201810231712254_AddColumnImagesForReservationDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810231717555_DropColumnImageURL.cs" />
+    <Compile Include="Migrations\201810231717555_DropColumnImageURL.Designer.cs">
+      <DependentUpon>201810231717555_DropColumnImageURL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810231720542_AddImagesToDB.cs" />
+    <Compile Include="Migrations\201810231720542_AddImagesToDB.Designer.cs">
+      <DependentUpon>201810231720542_AddImagesToDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ImagesUploaded.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\ReservationDate.cs" />
@@ -347,6 +396,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810222117317_AddSomeExistingReservations.resx">
       <DependentUpon>201810222117317_AddSomeExistingReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231614457_AddedInforFromTextBoxColumn.resx">
+      <DependentUpon>201810231614457_AddedInforFromTextBoxColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231619044_ChangeReservationDateModelPropertyConstraints.resx">
+      <DependentUpon>201810231619044_ChangeReservationDateModelPropertyConstraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231619479_UpdateRowsWithInfoFromTextBox.resx">
+      <DependentUpon>201810231619479_UpdateRowsWithInfoFromTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231647150_AddRequiredAnnotationToInfoFromTextBoxProperty.resx">
+      <DependentUpon>201810231647150_AddRequiredAnnotationToInfoFromTextBoxProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231649586_AddImageModelAndImageURLFieldInReservationDates.resx">
+      <DependentUpon>201810231649586_AddImageModelAndImageURLFieldInReservationDates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231654126_AddImagesToExistingRows.resx">
+      <DependentUpon>201810231654126_AddImagesToExistingRows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231658429_AddRequiredAnnotationToImageURL.resx">
+      <DependentUpon>201810231658429_AddRequiredAnnotationToImageURL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231701333_AddImagesToImagesTable.resx">
+      <DependentUpon>201810231701333_AddImagesToImagesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231704519_AddImagesToExistingReservations.resx">
+      <DependentUpon>201810231704519_AddImagesToExistingReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231712254_AddColumnImagesForReservationDates.resx">
+      <DependentUpon>201810231712254_AddColumnImagesForReservationDates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231717555_DropColumnImageURL.resx">
+      <DependentUpon>201810231717555_DropColumnImageURL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231720542_AddImagesToDB.resx">
+      <DependentUpon>201810231720542_AddImagesToDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

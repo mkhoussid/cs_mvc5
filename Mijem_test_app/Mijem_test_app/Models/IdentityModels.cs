@@ -23,6 +23,7 @@ namespace Mijem_test_app.Models
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<ReservationDate> ReservationDates { get; set; }
+        public DbSet<ImagesUploaded> ImagesUploaded { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

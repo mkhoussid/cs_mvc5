@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -18,11 +19,19 @@ namespace Mijem_test_app.Models
         //key
         public int Id { get; set; }
         //location name
+        [Required]
         public Reservation Reservation { get; set; }
         //contact
+        [Required]
         public Contact Contact { get; set; }
         //date reserved for
+        [Required]
         public DateTime ReservedDate { get; set; }
+        //information from textbox
+        [Required]
+        public string InfoFromTextBox { get; set; }
+        
+        public ImagesUploaded ImageURL { get; set; }
 
         //here we are also going to look to see if the venue is already booked. if it is, then another user cannot reserve it
     }

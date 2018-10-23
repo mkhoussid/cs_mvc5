@@ -4,5 +4,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>NewReservation</h2>
-
+<div class="w3-container row" style="background-color:#fff;padding-top: 15px;">
+    <div class="column">
+        <h2 style="color: red; font-size:2em">Create a Reservation</h2>
+    </div>
+    <div class="column">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+    </div>
+    <div class="column">
+        <input type="button" value="List Reservations" class="btn btn-primary column_button" onclick="@("window.location.href='" + @Url.Action("Index", "ReservationDates") + "'");" />
+    </div>
+</div>
