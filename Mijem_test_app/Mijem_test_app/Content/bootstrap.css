@@ -6202,6 +6202,24 @@ body.modal-open,
   }
 }
 
+.column-contact {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+.row-contact:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column-contact {
+        width: 100%;
+    }
+}
+
 .clearfix:before,
 .clearfix:after {
   display: table;
