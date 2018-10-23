@@ -4,10 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<header style="padding-bottom: 15px;" role="banner">
+@*<header style="padding-bottom: 15px;" role="banner">
     <img src="~/Content/asset_banner.jpg" class="img-responsive center_banner" alt="Banner Image" />
     <img src="~/Content/asset_banner_mobile.jpg" class="img-responsive mobile center_banner" alt="Banner Image" />
-</header>
+</header>*@
 
 <div class="w3-container row" style="background-color:#fff;padding-top: 15px;">
     <div class="column">
@@ -20,16 +20,9 @@
         </p>
     </div>
     <div class="column">
-        <input type="button" value="Create Reservation" class="btn btn-primary column_button" onclick="@("window.location.href='" + @Url.Action("NewReservation", "Reservations") + "'");" />
+        <input type="button" value="Create Reservation" class="btn btn-primary column_button" onclick="@("window.location.href='" + @Url.Action("NewReservation", "ReservationDates") + "'");" />
     </div>
 </div>
-
-@*<div class="tr" style="background-color:#f1f1f1;">
-        <div class="td0">Please rate this school</div>
-        <div class="td">@Html.Partial("_VoteNow", Model.AutoId.ToString())</div>
-        <div class="td">@Html.Partial("_VoteShow", Model.Votes)</div>
-    </div>*@
-
 
 <table class="table table-bordered table-hover">
     <tbody>
@@ -164,7 +157,7 @@
                 </span>
             </td>
             <td>
-                <input type="button" value="Edit" class="btn btn-default column_button" onclick="@("window.location.href='" + @Url.Action("NewReservation", "Reservations") + "'");" />
+                <input type="button" value="Edit" class="btn btn-default column_button" onclick="@("window.location.href='" + @Url.Action("EditReservation", "ReservationDates") + "'");" />
             </td>
         </tr>
     }

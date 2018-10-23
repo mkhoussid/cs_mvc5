@@ -32,5 +32,15 @@ namespace Mijem_test_app.Controllers
                 .ToList();
             return View(reservations);
         }
+
+        public ActionResult NewReservation()
+        {
+            return View();
+        }
+
+        public ActionResult EditReservation(int id)
+        {
+            return View();
+        }
     }
 }
