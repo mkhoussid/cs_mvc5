@@ -22,7 +22,7 @@
 
 @using (Html.BeginForm("NewReservation", "ReservationDates"))
 {
-    <div class="" style="background-color:#fff;padding-top: 15px;">
+    <div class="row-contact" style="background-color:#fff;padding-top: 15px;">
         <div style="float: left;width: 30%;padding: 1px;">
             @Html.EditorFor(m => m.Name, new { htmlAttributes = 
                 new { @class = "form-control", 
@@ -34,9 +34,11 @@
                     placeholder = @Html.DisplayNameFor(m => m.ContactType) } })
         </div>
         <div style="float: left;width: 30%;padding: 1px;">
-            @Html.TextBoxFor(m => m.ContactNumber, new { htmlAttributes = 
+            @Html.EditorFor(m => m.ContactNumber, new { htmlAttributes = 
                 new { @class = "form-control", 
-                    placeholder = @Html.DisplayNameFor(m => m.ContactNumber) } })
+                    placeholder = @Html.DisplayNameFor(m => m.ContactNumber),
+                    type = "tel"
+                } })
         </div>
         <div style="float: left;width: 10%;padding: 1px;">
             @Html.EditorFor(m => m.BirthDate, new { htmlAttributes = 
