@@ -124,19 +124,6 @@ namespace Mijem_test_app.Controllers
             return View(user);
         }
 
-
-        //public ActionResult NewReservation()
-        //{
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //public ActionResult CreateReservation(ReservationDate reservation)
-        //{
-        //    _context.ReservationDates.Add(reservation);
-
-        //}
-
         [Route("ReservationDates/EditReservation/{id}")]
         public ActionResult EditReservation(int? id)
         {
@@ -152,5 +139,17 @@ namespace Mijem_test_app.Controllers
 
             return View(reservation);
         }
+
+        //public ActionResult NewReservation()
+        //{
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public ActionResult CreateReservation(ReservationDate reservation)
+        //{
+        //    _context.ReservationDates.Add(reservation);
+
+        //}
     }
 }

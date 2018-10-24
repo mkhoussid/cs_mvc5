@@ -41,9 +41,13 @@
 </div>
 
 <h3>Edit details for: @Model.Reservation.Name</h3>
+
 <p>Booked for @Model.ReservedDate.ToShortDateString() by @Model.Contact.Name</p>
+
 <hr id="hr"/>
+
 <h4>Change Date</h4>
+
 @using (Html.BeginForm("Update", "ReservationDates"))
 {
     <div class="row-contact" style="background-color:#fff;padding-top: 15px;">
@@ -71,6 +75,7 @@
                 }
         })
     </div>
+    @Html.HiddenFor(x => x.Id)
     <button style="margin-top: 15px; float:right;" class="btn btn-success">Save</button>
 }
 
