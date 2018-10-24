@@ -33,10 +33,42 @@ namespace Mijem_test_app.Controllers
             return View(reservations);
         }
 
-        public ActionResult NewReservation()
+        public ActionResult Proceed()
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult ConfirmLocation()
+        {
+            var locations = _context.Reservations.ToList();
+            return View(locations);
+        }
+
+        //saves user if they do not exist
+        [HttpPost]
+        public ActionResult NewReservation(Contact user)
+        {
+            var _user = _context.Contacts.Single(c => c.ContactNumber == user.ContactNumber);
+            if (_user == null)
+            {
+                _context.Contacts.Add(user);
+                _context.SaveChanges();
+            }
+            return View(user);
+        }
+
+        //public ActionResult NewReservation()
+        //{
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public ActionResult CreateReservation(ReservationDate reservation)
+        //{
+        //    _context.ReservationDates.Add(reservation);
+
+        //}
 
         public ActionResult EditReservation(int id)
         {
