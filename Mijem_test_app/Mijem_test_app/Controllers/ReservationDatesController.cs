@@ -48,7 +48,6 @@ namespace Mijem_test_app.Controllers
 
         public ActionResult Save(Reservation reservation)
         {
-            //TODO: implement saving to ReservationDate -- for now, just save as new location to avoid breaking
             _context.Reservations.Add(reservation);
             _context.SaveChanges();
             return View("Index");
