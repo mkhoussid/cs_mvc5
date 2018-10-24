@@ -76,7 +76,8 @@
 
 @using (Html.BeginForm("Delete", "ReservationDates"))
 {
-    <button style="background: red; margin-top: 15px; float:right;" class="btn btn-success">Delete</button>
+    @Html.HiddenFor(x => x.Id)
+    <button style="background: red; margin-right: 15px; margin-top: 15px; float:right;" class="btn btn-success">Delete</button>
 }
 <br/><br/>
 <script>

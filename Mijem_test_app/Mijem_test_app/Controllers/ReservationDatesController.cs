@@ -77,13 +77,23 @@ namespace Mijem_test_app.Controllers
             return Content("Passed");
         }
 
+        [HttpPost]
         public ActionResult Delete(ReservationDate reservation)
         {
+            //var result = (from p in _context.ReservationDates
+            //              where p.Id == reservation.Id
+            //              select p).SingleOrDefault();
+
+            //result.Deleted = true;
+
+            //_context.SaveChanges();
+
             var _reservation = _context.ReservationDates
                 .Include(r => r.Reservation)
                 .Include(r => r.Contact)
                 .SingleOrDefault(r => r.Id == reservation.Id);
-            return Content("Passed");
+            _reservation.Deleted = true;
+            return View("Index");
         }
 
         //saves user if they do not exist
