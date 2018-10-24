@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/11.1.1/classic/ckeditor.js"></script>
+    <style>
+        #hr_ {
+            border: 0;
+            height: 1px;
+            background: #333;
+            background-image: linear-gradient(to right, #ccc, #333, #ccc);
+        }
+    </style>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -17,7 +25,7 @@
 @Html.Partial("_Header");
 <div class="container body-content">
     @RenderBody()
-    <hr />
+    <hr id="hr_"/>
     <footer>
         <p>&copy; @DateTime.Now.Year - Mijem Test</p>
     </footer>

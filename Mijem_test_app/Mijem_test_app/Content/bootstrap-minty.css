@@ -83,12 +83,7 @@ body {
     outline: 0 !important;
 }
 
-hr {
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-    height: 0;
-    overflow: visible;
-}
+
 
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
@@ -468,13 +463,6 @@ h6, .h6 {
     font-size: 3.5rem;
     font-weight: 300;
     line-height: 1.2;
-}
-
-hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 small,
@@ -4915,10 +4903,7 @@ input[type="button"].btn-block {
     border-radius: 0.4rem;
 }
 
-    .card > hr {
-        margin-right: 0;
-        margin-left: 0;
-    }
+
 
     .card > .list-group:first-child .list-group-item:first-child {
         border-top-left-radius: 0.4rem;
@@ -5495,9 +5480,6 @@ input[type="button"].btn-block {
     border-color: #d9eee8;
 }
 
-    .alert-primary hr {
-        border-top-color: #c7e6dd;
-    }
 
     .alert-primary .alert-link {
         color: #2b453e;
@@ -5509,9 +5491,7 @@ input[type="button"].btn-block {
     border-color: #fce2e3;
 }
 
-    .alert-secondary hr {
-        border-top-color: #facbcd;
-    }
+
 
     .alert-secondary .alert-link {
         color: #5f3b3c;
@@ -5523,9 +5503,7 @@ input[type="button"].btn-block {
     border-color: #d0f1e4;
 }
 
-    .alert-success hr {
-        border-top-color: #bcebd9;
-    }
+
 
     .alert-success .alert-link {
         color: #1e4636;
@@ -5537,9 +5515,6 @@ input[type="button"].btn-block {
     border-color: #d6eef3;
 }
 
-    .alert-info hr {
-        border-top-color: #c2e6ed;
-    }
 
     .alert-info .alert-link {
         color: #27464d;
@@ -5551,10 +5526,6 @@ input[type="button"].btn-block {
     border-color: #fff1d4;
 }
 
-    .alert-warning hr {
-        border-top-color: #ffe9bb;
-    }
-
     .alert-warning .alert-link {
         color: #614e27;
     }
@@ -5565,9 +5536,7 @@ input[type="button"].btn-block {
     border-color: #ffd9ce;
 }
 
-    .alert-danger hr {
-        border-top-color: #ffc5b5;
-    }
+
 
     .alert-danger .alert-link {
         color: #5e2c1e;
@@ -5579,9 +5548,7 @@ input[type="button"].btn-block {
     border-color: #fdfdfe;
 }
 
-    .alert-light hr {
-        border-top-color: #ececf6;
-    }
+
 
     .alert-light .alert-link {
         color: #686868;
@@ -5592,10 +5559,6 @@ input[type="button"].btn-block {
     background-color: #d6d8d9;
     border-color: #c6c8ca;
 }
-
-    .alert-dark hr {
-        border-top-color: #b9bbbe;
-    }
 
     .alert-dark .alert-link {
         color: #040505;

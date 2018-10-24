@@ -6014,7 +6014,7 @@ var nodeNames = "abbr|article|aside|audio|bdi|canvas|data|datalist|details|figca
 	rinlinejQuery = / jQuery\d+="(?:null|\d+)"/g,
 	rnoshimcache = new RegExp("<(?:" + nodeNames + ")[\\s/>]", "i"),
 	rleadingWhitespace = /^\s+/,
-	rxhtmlTag = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([\w:]+)[^>]*)\/>/gi,
+	rxhtmlTag = /<(?!area|br|col|embed|img|input|link|meta|param)(([\w:]+)[^>]*)\/>/gi,
 	rtagName = /<([\w:]+)/,
 	rtbody = /<tbody/i,
 	rhtml = /<|&#?\w+;/,

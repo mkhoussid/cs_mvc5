@@ -97,11 +97,6 @@ code, kbd, pre, samp {
     font-size: 1em
 }
 
-hr {
-    box-sizing: content-box;
-    height: 0;
-    overflow: visible
-}
 
 button, input, select {
     font: inherit;
@@ -224,11 +219,6 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 4px
 }
 
-hr {
-    border: 0;
-    border-top: 1px solid #eee;
-    margin: 20px 0
-}
 
 .w3-image {
     max-width: 100%;

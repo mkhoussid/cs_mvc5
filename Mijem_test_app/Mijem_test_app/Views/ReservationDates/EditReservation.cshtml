@@ -5,7 +5,7 @@
 }
 
 <style>
-    #hr.style-eight {
+    #hr {
         overflow: visible; /* For IE */
         padding: 0;
         border: none;
@@ -14,7 +14,7 @@
         text-align: center;
     }
 
-        #hr.style-eight:after {
+        #hr:after {
             content: "§";
             display: inline-block;
             position: relative;
@@ -42,7 +42,7 @@
 
 <h3>Edit details for: @Model.Reservation.Name</h3>
 <p>Booked for @Model.ReservedDate.ToShortDateString() by @Model.Contact.Name</p>
-<hr id="hr.style-eight"/>
+<hr id="hr"/>
 <h4>Change Date</h4>
 @using (Html.BeginForm("ConfirmLocation", "ReservationDates"))
 {
