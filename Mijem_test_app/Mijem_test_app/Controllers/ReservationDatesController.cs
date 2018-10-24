@@ -145,8 +145,9 @@ namespace Mijem_test_app.Controllers
                 .Include(r => r.Reservation)
                 .Include(r => r.Contact)
                 .SingleOrDefault(r => r.Id == id);
-
-            if (reservation == null || !id.HasValue)
+            
+            //ensure deleted reservations cannot be accessed
+            if (reservation == null || !id.HasValue || reservation.Deleted == true)
                 return HttpNotFound();
 
             return View(reservation);
