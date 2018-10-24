@@ -59,13 +59,14 @@ namespace Mijem_test_app.Controllers
             return View(locations);
         }
 
-        public ActionResult Save(Reservation reservation)
+        public ActionResult Save(ReservationDate reservation)
         {
-            _context.Reservations.Add(reservation);
-
+            var _reservation = _context.ReservationDates
+                .SingleOrDefault(r => r.Id == reservation.Id);
+            _reservation.ReservedDate = reservation.ReservedDate;
+            _reservation.InfoFromTextBox = reservation.InfoFromTextBox;
             _context.SaveChanges();
-
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Update(ReservationDate reservation)
@@ -80,14 +81,6 @@ namespace Mijem_test_app.Controllers
         [HttpPost]
         public ActionResult Delete(ReservationDate reservation)
         {
-            //var result = (from p in _context.ReservationDates
-            //              where p.Id == reservation.Id
-            //              select p).SingleOrDefault();
-
-            //result.Deleted = true;
-
-            //_context.SaveChanges();
-
             var _reservation = _context.ReservationDates
                 .Include(r => r.Reservation)
                 .Include(r => r.Contact)
