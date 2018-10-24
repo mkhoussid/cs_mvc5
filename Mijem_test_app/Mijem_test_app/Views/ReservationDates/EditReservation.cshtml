@@ -5,7 +5,7 @@
 }
 
 <style>
-    .hr.style-eight {
+    #hr.style-eight {
         overflow: visible; /* For IE */
         padding: 0;
         border: none;
@@ -13,15 +13,16 @@
         color: #333;
         text-align: center;
     }
-    .hr.style-eight:after {
-        content: "§";
-        display: inline-block;
-        position: relative;
-        top: -0.7em;
-        font-size: 1.5em;
-        padding: 0 0.25em;
-        background: white;
-    }
+
+        #hr.style-eight:after {
+            content: "§";
+            display: inline-block;
+            position: relative;
+            top: -0.7em;
+            font-size: 1.5em;
+            padding: 0 0.25em;
+            background: white;
+        }
 </style>
 
 <div class="w3-container row" style="background-color:#fff;padding-top: 15px;">
@@ -41,7 +42,7 @@
 
 <h3>Edit details for: @Model.Reservation.Name</h3>
 <p>Booked for @Model.ReservedDate.ToShortDateString() by @Model.Contact.Name</p>
-<hr class="hr.style-eight"/>
+<hr id="hr.style-eight"/>
 <h4>Change Date</h4>
 @using (Html.BeginForm("ConfirmLocation", "ReservationDates"))
 {
