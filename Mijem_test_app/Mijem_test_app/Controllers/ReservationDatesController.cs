@@ -68,13 +68,18 @@ namespace Mijem_test_app.Controllers
             return View("Index");
         }
 
+        [HttpPost]
         public ActionResult Update(ReservationDate reservation)
         {
             var _reservation = _context.ReservationDates
                 .SingleOrDefault(r => r.Id == reservation.Id);
+
             _reservation.ReservedDate = reservation.ReservedDate;
+
             _reservation.InfoFromTextBox = reservation.InfoFromTextBox;
+
             _context.SaveChanges();
+
             return RedirectToAction("Index");
 
             //var _reservation = _context.ReservationDates
@@ -88,11 +93,14 @@ namespace Mijem_test_app.Controllers
         public ActionResult Delete(ReservationDate reservation)
         {
             var _reservation = _context.ReservationDates
-                .Include(r => r.Reservation)
-                .Include(r => r.Contact)
+                //.Include(r => r.Reservation)
+                //.Include(r => r.Contact)
                 .SingleOrDefault(r => r.Id == reservation.Id);
+
             _reservation.Deleted = true;
+
             _context.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
@@ -101,6 +109,7 @@ namespace Mijem_test_app.Controllers
         public ActionResult NewReservation(Contact user)
         {
             var _existingContacts = _context.Contacts.ToList();
+
             foreach (var contact in _existingContacts)
             {
                 if (contact.ContactNumber == user.ContactNumber)
@@ -109,7 +118,9 @@ namespace Mijem_test_app.Controllers
                 }
             }
             _context.Contacts.Add(user);
+
             _context.SaveChanges();
+
             return View(user);
         }
 
@@ -134,9 +145,10 @@ namespace Mijem_test_app.Controllers
                 .Include(r => r.Reservation)
                 .Include(r => r.Contact)
                 .SingleOrDefault(r => r.Id == id);
-            //in case user decides to manually change URL
+
             if (reservation == null || !id.HasValue)
                 return HttpNotFound();
+
             return View(reservation);
         }
     }
