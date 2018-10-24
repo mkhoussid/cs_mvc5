@@ -93,7 +93,8 @@ namespace Mijem_test_app.Controllers
                 .Include(r => r.Contact)
                 .SingleOrDefault(r => r.Id == reservation.Id);
             _reservation.Deleted = true;
-            return View("Index");
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         //saves user if they do not exist
