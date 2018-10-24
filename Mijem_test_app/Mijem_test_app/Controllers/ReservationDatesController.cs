@@ -55,23 +55,34 @@ namespace Mijem_test_app.Controllers
         {
 
             var locations = _context.Reservations.ToList();
+
             return View(locations);
         }
 
         public ActionResult Save(Reservation reservation)
         {
             _context.Reservations.Add(reservation);
+
             _context.SaveChanges();
+
             return View("Index");
         }
 
         public ActionResult Update(ReservationDate reservation)
         {
+            var _reservation = _context.ReservationDates
+                .Include(r => r.Reservation)
+                .Include(r => r.Contact)
+                .SingleOrDefault(r => r.Id == reservation.Id);
             return Content("Passed");
         }
 
         public ActionResult Delete(ReservationDate reservation)
         {
+            var _reservation = _context.ReservationDates
+                .Include(r => r.Reservation)
+                .Include(r => r.Contact)
+                .SingleOrDefault(r => r.Id == reservation.Id);
             return Content("Passed");
         }
 

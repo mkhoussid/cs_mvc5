@@ -44,7 +44,7 @@
 <p>Booked for @Model.ReservedDate.ToShortDateString() by @Model.Contact.Name</p>
 <hr id="hr"/>
 <h4>Change Date</h4>
-@using (Html.BeginForm("ConfirmLocation", "ReservationDates"))
+@using (Html.BeginForm("Update", "ReservationDates"))
 {
     <div class="row-contact" style="background-color:#fff;padding-top: 15px;">
         <div>
@@ -56,7 +56,7 @@
                                                                 @class = "form-control",
                                                                 @id = "datepicker",
                                                                 name = "BirthDate",
-                                                                style = "background:#FFFFFF url(https://i.imgur.com/Vpa8zkj.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 10%;"
+                                                                style = "background:#FFFFFF url(https://i.imgur.com/Vpa8zkj.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 25%;"
                                                             }
             })
         </div>
@@ -74,10 +74,11 @@
     <button style="margin-top: 15px; float:right;" class="btn btn-success">Save</button>
 }
 
-@using (Html.BeginForm("ConfirmLocation", "ReservationDates"))
+@using (Html.BeginForm("Delete", "ReservationDates"))
 {
-    <button style="background: red; margin-top: 15px; float:right;" class="btn btn-success">Save</button>
+    <button style="background: red; margin-top: 15px; float:right;" class="btn btn-success">Delete</button>
 }
+<br/><br/>
 <script>
     ClassicEditor
         .create(document.querySelector('#InfoFromTextBox'))
