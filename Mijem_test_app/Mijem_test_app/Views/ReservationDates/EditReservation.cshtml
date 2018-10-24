@@ -1,8 +1,28 @@
 ﻿@model Mijem_test_app.Models.ReservationDate
 @{
     ViewBag.Title = "Edit Reservation";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutReservation.cshtml";
 }
+
+<style>
+    .hr.style-eight {
+        overflow: visible; /* For IE */
+        padding: 0;
+        border: none;
+        border-top: medium double #333;
+        color: #333;
+        text-align: center;
+    }
+    .hr.style-eight:after {
+        content: "§";
+        display: inline-block;
+        position: relative;
+        top: -0.7em;
+        font-size: 1.5em;
+        padding: 0 0.25em;
+        background: white;
+    }
+</style>
 
 <div class="w3-container row" style="background-color:#fff;padding-top: 15px;">
     <div class="column">
@@ -21,4 +41,46 @@
 
 <h3>Edit details for: @Model.Reservation.Name</h3>
 <p>Booked for @Model.ReservedDate.ToShortDateString() by @Model.Contact.Name</p>
+<hr class="hr.style-eight"/>
+<h4>Change Date</h4>
+@using (Html.BeginForm("ConfirmLocation", "ReservationDates"))
+{
+    <div class="row-contact" style="background-color:#fff;padding-top: 15px;">
+        <div>
+            @Html.EditorFor(m => m.ReservedDate, new
+            {
+                htmlAttributes =
+                                                            new
+                                                            {
+                                                                @class = "form-control",
+                                                                @id = "datepicker",
+                                                                name = "BirthDate",
+                                                                style = "background:#FFFFFF url(https://i.imgur.com/Vpa8zkj.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 10%;"
+                                                            }
+            })
+        </div>
+    </div><br /><br />
+    <div>
+        @Html.TextAreaFor(m => m.InfoFromTextBox, new
+        {
+            htmlAttributes =
+                new
+                {
+                    @id = "editor",
+                }
+        })
+    </div>
+    <button style="margin-top: 15px; float:right;" class="btn btn-success">Save</button>
+}
 
+@using (Html.BeginForm("ConfirmLocation", "ReservationDates"))
+{
+    <button style="background: red; margin-top: 15px; float:right;" class="btn btn-success">Save</button>
+}
+<script>
+    ClassicEditor
+        .create(document.querySelector('#InfoFromTextBox'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>

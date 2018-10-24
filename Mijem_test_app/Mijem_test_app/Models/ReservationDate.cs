@@ -30,6 +30,8 @@ namespace Mijem_test_app.Models
         //information from textbox
         [Required]
         public string InfoFromTextBox { get; set; }
+
+        public bool Deleted { get; set; }
         
         public ImagesUploaded ImageURL { get; set; }
 

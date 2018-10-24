@@ -65,6 +65,16 @@ namespace Mijem_test_app.Controllers
             return View("Index");
         }
 
+        public ActionResult Update(ReservationDate reservation)
+        {
+            return Content("Passed");
+        }
+
+        public ActionResult Delete(ReservationDate reservation)
+        {
+            return Content("Passed");
+        }
+
         //saves user if they do not exist
         [HttpPost]
         public ActionResult NewReservation(Contact user)
