@@ -41,20 +41,31 @@ namespace Mijem_test_app.Controllers
         [HttpPost]
         public ActionResult ConfirmLocation()
         {
+
             var locations = _context.Reservations.ToList();
             return View(locations);
+        }
+
+        public ActionResult Save(ReservationDate reservation)
+        {
+            
+            return View("Index");
         }
 
         //saves user if they do not exist
         [HttpPost]
         public ActionResult NewReservation(Contact user)
         {
-            var _user = _context.Contacts.Single(c => c.ContactNumber == user.ContactNumber);
-            if (_user == null)
+            var _existingContacts = _context.Contacts.ToList();
+            foreach (var contact in _existingContacts)
             {
-                _context.Contacts.Add(user);
-                _context.SaveChanges();
+                if (contact.ContactNumber == user.ContactNumber)
+                {
+                    return View(user);
+                }
             }
+            _context.Contacts.Add(user);
+            _context.SaveChanges();
             return View(user);
         }
 

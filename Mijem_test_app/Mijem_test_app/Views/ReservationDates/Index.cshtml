@@ -4,12 +4,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<header style="padding-bottom: 15px;" role="banner">
-    <img src="~/Content/asset_banner.jpg" class="img-responsive center_banner" alt="Banner Image" />
-    <img src="~/Content/asset_banner_mobile.jpg" class="img-responsive mobile center_banner" alt="Banner Image" />
-</header>*@
+<style>
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .3s;
+    }
 
+    .pagination a.active {
+        background-color: dodgerblue;
+        color: white;
+    }
 
+    .pagination a:hover:not(.active) {background-color: #ddd;}
+</style>
 
 <div class="w3-container row" style="background-color:#fff;padding-top: 15px;">
     <div class="column">
@@ -165,3 +175,14 @@
     }
     </tbody>
 </table>
+
+<div class="pagination">
+    <a href="#">&laquo;</a>
+    <a href="#">1</a>
+    <a class="active" href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">&raquo;</a>
+</div>
