@@ -24,13 +24,25 @@ namespace Mijem_test_app.Controllers
         }
 
         // GET: ReservationDates
-        public ViewResult Index()
+        public ViewResult Index(int page = 0)
         {
             var reservations = _context.ReservationDates
                 .Include(r => r.Reservation)
                 .Include(r => r.Contact)
                 .ToList();
-            return View(reservations);
+            
+            const int PageSize = 6; // you can always do something more elegant to set this
+
+            var count = reservations.Count();
+
+            var data = reservations.Skip(page * PageSize).Take(PageSize).ToList();
+
+            this.ViewBag.MaxPage = (count / PageSize) - (count % PageSize == 0 ? 1 : 0);
+
+            this.ViewBag.Page = page;
+
+            return this.View(data);
+            //return View(reservations);
         }
 
         public ActionResult Proceed()
@@ -69,6 +81,7 @@ namespace Mijem_test_app.Controllers
             _context.SaveChanges();
             return View(user);
         }
+
 
         //public ActionResult NewReservation()
         //{

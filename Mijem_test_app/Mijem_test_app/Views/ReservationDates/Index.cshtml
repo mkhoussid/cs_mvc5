@@ -1,8 +1,8 @@
-﻿TODO: perform server side validation and create store procedures
-TODO: demonstrate ajax
+﻿@*TODO: perform server side validation and create store procedures
 TODO: implement validateForm in Proceed.cshtml -- for now just use html attribute 'required'
 TODO: implement saving to ReservationDate in Save() action in ReservationDatesController -- for now, just save as new location to avoid breaking
 TODO: Implement editing a reservation in ReservationDatesController
+TODO: demonstrate more ajax and use of knockout.js*@
 
 
 
@@ -187,13 +187,25 @@ TODO: Implement editing a reservation in ReservationDatesController
     </tbody>
 </table>
 
-<div class="pagination">
-    <a href="#">&laquo;</a>
-    <a href="#">1</a>
-    <a class="active" href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-    <a href="#">6</a>
-    <a href="#">&raquo;</a>
-</div>
+
+@if (ViewBag.Page > 0)
+{
+    <div class="pagination" style="float: left;">
+        <a href="@Url.Action("Index", new { page = ViewBag.Page - 1 })"
+           class="btn btn-default"
+           style="float: left;">
+            &laquo; Prev
+        </a>
+    </div>
+}
+@if (ViewBag.Page < ViewBag.MaxPage)
+{
+    <div class="pagination" style="float: right;">
+        <a href="@Url.Action("Index", new { page = ViewBag.Page + 1 })"
+           class="btn btn-default">
+            Next &raquo;
+        </a>
+    </div>
+}
+@*get rid of breaks if building compatibility for XHTML in the future*@
+<br /><br />
