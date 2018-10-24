@@ -6,7 +6,21 @@
 }
 
 
-
+<script>
+    //perform some front end validation
+    //TODO: perform server side validation and create store procedures
+    //TODO: demonstrate ajax 
+    validateForm = () => {
+        var a = document.querySelector('cname');
+        var b = document.querySelector('ctype');
+        var c = document.querySelector('cnum');
+        var d = document.querySelector('datepicker');
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+    }
+</script>
 
 <div class="w3-container row" style="background-color:#fff;padding-top: 15px; margin-bottom: 10px;">
     <div class="column">
@@ -35,6 +49,7 @@
                                              new
                                              {
                                                  @class = "form-control",
+                                                 id = "cname".
                                                  style = "background:#FFFFFF url(https://i.imgur.com/XVEmIjP.png) no-repeat 4px 4px;padding-left:30px;float: left;margin-right: 5px;",
                                                  placeholder = @Html.DisplayNameFor(m => m.Name)
                                              }
@@ -48,6 +63,7 @@
                                              {
                                                  @class = "form-control",
                                                  list = "contactType",
+                                                 id = "ctype",
                                                  name = "contactType",
                                                  style = "background:#FFFFFF url(https://i.imgur.com/Bchv5Vl.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 30%;margin-right: 5px;",
                                                  placeholder = @Html.DisplayNameFor(m => m.ContactType)
@@ -66,6 +82,7 @@
                                              new
                                              {
                                                  @class = "form-control",
+                                                 id = "cnum",
                                                  style = "background:#FFFFFF url(https://i.imgur.com/zPUpbEt.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 30%;margin-right: 5px;",
                                                  placeholder = @Html.DisplayNameFor(m => m.ContactNumber),
                                                  type = "tel"
