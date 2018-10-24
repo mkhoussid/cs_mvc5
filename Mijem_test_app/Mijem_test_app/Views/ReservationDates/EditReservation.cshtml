@@ -1,4 +1,4 @@
-﻿
+﻿@model Mijem_test_app.Models.ReservationDate
 @{
     ViewBag.Title = "Edit Reservation";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -18,3 +18,9 @@
         <input type="button" value="List Reservations" class="btn btn-primary column_button" onclick="@("window.location.href='" + @Url.Action("Index", "ReservationDates") + "'");" />
     </div>
 </div>
+
+<h3>Edit details for: @Model.Reservation.Name</h3>
+<p>Booked for @Model.ReservedDate.ToShortDateString() by @Model.Contact.Name</p>
+
+@*TODO:
+Implement editing a reservation*@

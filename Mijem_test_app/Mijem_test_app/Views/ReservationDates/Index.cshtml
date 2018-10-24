@@ -169,7 +169,8 @@
                 </span>
             </td>
             <td>
-                <input type="button" value="Edit" class="btn btn-default column_button" onclick="@("window.location.href='" + @Url.Action("EditReservation", "ReservationDates") + "'");" />
+                <input type="button" id="@reservation.Id" value="Edit" class="btn btn-default column_button"
+                       onclick="@("window.location.href='" + @Url.Action("EditReservation", "ReservationDates", new { id = @reservation.Id}) + "'");" />
             </td>
         </tr>
     }
