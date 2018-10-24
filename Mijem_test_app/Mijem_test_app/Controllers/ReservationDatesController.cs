@@ -59,7 +59,16 @@ namespace Mijem_test_app.Controllers
             return View(locations);
         }
 
-        public ActionResult Save(ReservationDate reservation)
+        public ActionResult Save(Reservation reservation)
+        {
+            _context.Reservations.Add(reservation);
+
+            _context.SaveChanges();
+
+            return View("Index");
+        }
+
+        public ActionResult Update(ReservationDate reservation)
         {
             var _reservation = _context.ReservationDates
                 .SingleOrDefault(r => r.Id == reservation.Id);
@@ -67,15 +76,12 @@ namespace Mijem_test_app.Controllers
             _reservation.InfoFromTextBox = reservation.InfoFromTextBox;
             _context.SaveChanges();
             return RedirectToAction("Index");
-        }
 
-        public ActionResult Update(ReservationDate reservation)
-        {
-            var _reservation = _context.ReservationDates
-                .Include(r => r.Reservation)
-                .Include(r => r.Contact)
-                .SingleOrDefault(r => r.Id == reservation.Id);
-            return Content("Passed");
+            //var _reservation = _context.ReservationDates
+            //    .Include(r => r.Reservation)
+            //    .Include(r => r.Contact)
+            //    .SingleOrDefault(r => r.Id == reservation.Id);
+            //return Content("Passed");
         }
 
         [HttpPost]
