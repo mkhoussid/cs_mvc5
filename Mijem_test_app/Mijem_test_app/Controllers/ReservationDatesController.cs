@@ -27,22 +27,22 @@ namespace Mijem_test_app.Controllers
         public ViewResult Index(int page = 0)
         {
             var reservations = _context.ReservationDates
+                .Where(r => r.Deleted == false)
                 .Include(r => r.Reservation)
                 .Include(r => r.Contact)
                 .ToList();
             
-            const int PageSize = 6; // you can always do something more elegant to set this
+            const int PageSize = 6;
 
             var count = reservations.Count();
 
             var data = reservations.Skip(page * PageSize).Take(PageSize).ToList();
 
-            this.ViewBag.MaxPage = (count / PageSize) - (count % PageSize == 0 ? 1 : 0);
+            ViewBag.MaxPage = (count / PageSize) - (count % PageSize == 0 ? 1 : 0);
 
-            this.ViewBag.Page = page;
+            ViewBag.Page = page;
 
-            return this.View(data);
-            //return View(reservations);
+            return View(data);
         }
 
         public ActionResult Proceed()
@@ -83,12 +83,6 @@ namespace Mijem_test_app.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index");
-
-            //var _reservation = _context.ReservationDates
-            //    .Include(r => r.Reservation)
-            //    .Include(r => r.Contact)
-            //    .SingleOrDefault(r => r.Id == reservation.Id);
-            //return Content("Passed");
         }
 
         [HttpPost]
