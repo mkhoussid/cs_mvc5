@@ -72,6 +72,8 @@ namespace Mijem_test_app.Controllers
         public ActionResult Update(ReservationDate reservation)
         {
             var _reservation = _context.ReservationDates
+                .Include(r => r.Reservation)
+                .Include(r => r.Contact)
                 .SingleOrDefault(r => r.Id == reservation.Id);
 
             _reservation.ReservedDate = reservation.ReservedDate;
@@ -93,8 +95,8 @@ namespace Mijem_test_app.Controllers
         public ActionResult Delete(ReservationDate reservation)
         {
             var _reservation = _context.ReservationDates
-                //.Include(r => r.Reservation)
-                //.Include(r => r.Contact)
+                .Include(r => r.Reservation)
+                .Include(r => r.Contact)
                 .SingleOrDefault(r => r.Id == reservation.Id);
 
             _reservation.Deleted = true;

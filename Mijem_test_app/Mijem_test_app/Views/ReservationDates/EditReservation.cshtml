@@ -66,14 +66,8 @@
         </div>
     </div><br /><br />
     <div>
-        @Html.TextAreaFor(m => m.InfoFromTextBox, new
-        {
-            htmlAttributes =
-                new
-                {
-                    @id = "editor",
-                }
-        })
+        <textarea id="editor">@Model.InfoFromTextBox</textarea>
+        @*@Html.TextAreaFor(m => m.InfoFromTextBox)*@
     </div>
     @Html.HiddenFor(x => x.Id)
     <button style="margin-top: 15px; float:right;" class="btn btn-success">Save</button>
@@ -87,7 +81,7 @@
 <br/><br/>
 <script>
     ClassicEditor
-        .create(document.querySelector('#InfoFromTextBox'))
+        .create(document.querySelector('#editor'))
         .catch(error => {
             console.error(error);
         });

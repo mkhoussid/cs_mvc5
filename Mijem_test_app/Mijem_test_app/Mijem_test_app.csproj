@@ -278,6 +278,10 @@
     <Compile Include="Migrations\201810231720542_AddImagesToDB.Designer.cs">
       <DependentUpon>201810231720542_AddImagesToDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810251537049_ResetValuesAfterTesting.cs" />
+    <Compile Include="Migrations\201810251537049_ResetValuesAfterTesting.Designer.cs">
+      <DependentUpon>201810251537049_ResetValuesAfterTesting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -438,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810231720542_AddImagesToDB.resx">
       <DependentUpon>201810231720542_AddImagesToDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810251537049_ResetValuesAfterTesting.resx">
+      <DependentUpon>201810251537049_ResetValuesAfterTesting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
