@@ -48,7 +48,7 @@
 
 <h4>Change Date</h4>
 
-@using (Html.BeginForm("Update", "ReservationDates"))
+@using (Html.BeginForm("Update", "ReservationDates", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "replaceContent()" } ))
 {
     <div class="row-contact" style="background-color:#fff;padding-top: 15px;">
         <div>
@@ -66,8 +66,9 @@
         </div>
     </div><br /><br />
     <div>
-        <textarea id="editor">@Model.InfoFromTextBox</textarea>
-        @*@Html.TextAreaFor(m => m.InfoFromTextBox)*@
+        @*<textarea id="editor">@Model.InfoFromTextBox</textarea>*@
+        @*@Html.HiddenFor(m => m.InfoFromTextBox)*@
+        @Html.TextAreaFor(m => m.InfoFromTextBox)
     </div>
     @Html.HiddenFor(x => x.Id)
     <button style="margin-top: 15px; float:right;" class="btn btn-success">Save</button>
@@ -81,8 +82,14 @@
 <br/><br/>
 <script>
     ClassicEditor
-        .create(document.querySelector('#editor'))
+        .create(document.querySelector('#InfoFromTextBox'))
         .catch(error => {
             console.error(error);
         });
+    replaceContent = () => {
+        var x = document.getElementsByTagName("P");
+        document.getElementById("InfoFromTextBox").innerHTML = x[2].innerHTML;
+        alert(x[2].innerHTML);
+        alert(document.getElementById("InfoFromTextBox").innerHTML);
+    }
 </script>
