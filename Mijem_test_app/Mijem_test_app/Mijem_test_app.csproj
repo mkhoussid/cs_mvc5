@@ -287,6 +287,10 @@
     <Compile Include="Migrations\201810251656456_ResetDBValuesAfterTesting.Designer.cs">
       <DependentUpon>201810251656456_ResetDBValuesAfterTesting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810251914482_DeleteRecordsAfterTesting.cs" />
+    <Compile Include="Migrations\201810251914482_DeleteRecordsAfterTesting.Designer.cs">
+      <DependentUpon>201810251914482_DeleteRecordsAfterTesting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -453,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810251656456_ResetDBValuesAfterTesting.resx">
       <DependentUpon>201810251656456_ResetDBValuesAfterTesting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810251914482_DeleteRecordsAfterTesting.resx">
+      <DependentUpon>201810251914482_DeleteRecordsAfterTesting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

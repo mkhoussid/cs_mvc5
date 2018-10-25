@@ -111,9 +111,10 @@ namespace Mijem_test_app.Controllers
 
         public ActionResult NewReservation()
         {
-            long _number = ViewBag.ContactPhoneNumber;
+            var _number = (long)TempData["ContactNumber"];
 
-            var _contact = _context.Contacts.Last();
+            var _contact = _context.Contacts
+                .SingleOrDefault(c => c.ContactNumber == _number);
 
             TempData["ContactName"] = _contact.Name;
 
@@ -122,6 +123,8 @@ namespace Mijem_test_app.Controllers
             TempData["Birthdate"] = _contact.BirthDate;
 
             TempData["ContactID"] = _contact.Id;
+
+            TempData["ContactNumber"] = _contact.ContactNumber;
 
             return View();
         }
