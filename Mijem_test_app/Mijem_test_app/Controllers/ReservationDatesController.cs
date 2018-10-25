@@ -53,10 +53,7 @@ namespace Mijem_test_app.Controllers
         [HttpPost]
         public ActionResult ConfirmLocation()
         {
-
-            var locations = _context.Reservations.ToList();
-
-            return View(locations);
+            return View();
         }
 
         public ActionResult Save(Reservation reservation)
