@@ -100,13 +100,13 @@ namespace Mijem_test_app.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public ActionResult UpdateOrAddContact(ReservationDate user)
-        {
-            ViewBag.ContactID = user.Contact.Id;
+        //[HttpPost]
+        //public ActionResult UpdateOrAddContact(ReservationDate user)
+        //{
+        //    ViewBag.ContactID = user.Contact.Id;
 
-            return View("NewReservation");
-        }
+        //    return View("NewReservation");
+        //}
         //saves user if they do not exist
         [HttpPost]
         public ActionResult NewReservation(ReservationDate user)
@@ -115,9 +115,9 @@ namespace Mijem_test_app.Controllers
 
             foreach (var contact in _existingContacts)
             {
-                if (contact.ContactNumber == user.Contact.ContactNumber)
+                if (contact.Id == ViewBag.ContactID)
                 {
-                    return View(user);
+                    return View(contact);
                 }
             }
             _context.ReservationDates.Add(user);

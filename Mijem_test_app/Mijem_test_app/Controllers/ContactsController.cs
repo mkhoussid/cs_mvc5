@@ -24,23 +24,25 @@ namespace Mijem_test_app.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult UpdateOrAddContact(ReservationDate user)
         {
             var _user = _context.Contacts.ToList();
+
+            ViewBag.ContactID = user.Contact.Id;
 
             foreach (var contact in _user)
             {
                 if (contact.Id == user.Contact.Id)
                 {
-                    ViewBag.ContactID = user.Contact.Id;
                     return RedirectToAction("NewReservation", "ReservationDates");
                 }
             }
-            _context.ReservationDates.Add(user);
+            _context.Contacts.Add(user.Contact);
 
             _context.SaveChanges();
 
-            return View(user);
+            return RedirectToAction("NewReservation", "ReservationDates");
         }
     }
 }
