@@ -51,14 +51,33 @@ namespace Mijem_test_app.Controllers
         }
 
         [HttpPost]
-        public ActionResult ConfirmLocation()
+        public ActionResult ConfirmLocation(ReservationDate date)
         {
-            return View();
+            TempData["BookDate"] = date.ReservedDate;
+
+            TempData["InfoFromTextBox"] = date.InfoFromTextBox;
+
+            var locations = _context.ReservationDates
+                .Include(r => r.Reservation)
+                .Include(r => r.Contact)
+                .ToList();
+            return View(locations);
         }
 
-        public ActionResult Save(Reservation reservation)
+        [HttpPost]
+        public ActionResult Save(ReservationDate reservation)
         {
-            _context.Reservations.Add(reservation);
+            var _reservation = new ReservationDate
+            {
+                ReservedDate = (DateTime) TempData["BookDate"],
+                Contact_Id = TempData["ContactID"], //cannot resolve symbol Contact_Id
+                Reservation_Id = TempData["Location"], //cannot resolve symbol Reservation_Id
+                InfoFromTextBox = TempData["InfoFromTextBox"],
+                ImageURL_Id = 1, //cannot resolve symbol ImageURL_Id
+                Deleted = false
+            };
+
+            _context.ReservationDates.Add(_reservation);
 
             _context.SaveChanges();
 
