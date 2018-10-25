@@ -111,20 +111,19 @@ namespace Mijem_test_app.Controllers
 
         public ActionResult NewReservation()
         {
-            var _existingContacts = _context.Contacts.ToList();
+            long _number = ViewBag.ContactPhoneNumber;
 
-            foreach (var contact in _existingContacts)
-            {
-                if (contact.Id == ViewBag.ContactID)
-                {
-                    return View(contact);
-                }
-            }
-            _context.ReservationDates.Add(user);
+            var _contact = _context.Contacts.Last();
 
-            _context.SaveChanges();
+            TempData["ContactName"] = _contact.Name;
 
-            return View(user);
+            TempData["ContactType"] = _contact.ContactType;
+
+            TempData["Birthdate"] = _contact.BirthDate;
+
+            TempData["ContactID"] = _contact.Id;
+
+            return View();
         }
         [HttpPost]
         public ActionResult NewReservation(ReservationDate user)

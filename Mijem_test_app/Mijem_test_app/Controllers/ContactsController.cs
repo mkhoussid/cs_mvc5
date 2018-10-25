@@ -29,6 +29,8 @@ namespace Mijem_test_app.Controllers
         {
             var _user = _context.Contacts.ToList();
 
+            ViewBag.ContactPhoneNumber = user.Contact.ContactNumber;
+
             foreach (var contact in _user)
             {
                 if (contact.ContactNumber == user.Contact.ContactNumber)
