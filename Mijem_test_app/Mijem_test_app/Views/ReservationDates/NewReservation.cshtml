@@ -36,7 +36,7 @@
                                         {
                                             @class = "form-control",
                                             style = "background:#FFFFFF url(https://i.imgur.com/XVEmIjP.png) no-repeat 4px 4px;padding-left:30px;float: left;margin-right: 5px;",
-                                            placeholder = @Html.DisplayNameFor(m => m.Contact.Name)
+                                            placeholder = TempData["ContactName"]
                                         }
             })
         </div>
@@ -50,7 +50,7 @@
                                             list = "contactType",
                                             name = "contactType",
                                             style = "background:#FFFFFF url(https://i.imgur.com/Bchv5Vl.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 30%;margin-right: 5px;",
-                                            placeholder = @Html.DisplayNameFor(m => m.Contact.ContactType)
+                                            placeholder = TempData["ContactType"]
                                         }
             })
             <datalist id="contactType">
@@ -67,7 +67,7 @@
                                         {
                                             @class = "form-control",
                                             style = "background:#FFFFFF url(https://i.imgur.com/zPUpbEt.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 30%;margin-right: 5px;",
-                                            placeholder = @Html.DisplayNameFor(m => m.Contact.ContactNumber),
+                                            placeholder = TempData["ContactNumber"],
                                             type = "tel"
                                         }
             })
@@ -82,7 +82,7 @@
                                             @id = "datepicker",
                                             name = "BirthDate",
                                             style = "background:#FFFFFF url(https://i.imgur.com/Vpa8zkj.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 22.5%;",
-                                            placeholder = @Html.DisplayNameFor(m => m.Contact.BirthDate)
+                                            placeholder = TempData["ContactBirthdate"]
                                         }
             })
         </div>
@@ -90,7 +90,7 @@
     <div>
         <textarea placeholder="Please add some details to this reservation..." name="content" id="editor" required></textarea>
     </div>
-    @Html.HiddenFor(m => m.Id)
+    @*@Html.HiddenFor(m => m.Id)*@
     @Html.HiddenFor(m => m.InfoFromTextBox)
     <button style="margin-top: 15px; float:right; background: red;" class="btn btn-success">Save</button>
 }<br /><br />
@@ -107,8 +107,6 @@
     replaceContent = () => {
         var x = document.getElementsByTagName("P");
         document.getElementById("InfoFromTextBox").value = x[2].innerHTML;
-        alert(x[2].innerHTML);
-        alert(document.getElementById("InfoFromTextBox").innerHTML);
     }
 </script>
 

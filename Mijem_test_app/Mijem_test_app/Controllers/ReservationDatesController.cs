@@ -120,7 +120,7 @@ namespace Mijem_test_app.Controllers
 
             TempData["ContactType"] = _contact.ContactType;
 
-            TempData["Birthdate"] = _contact.BirthDate;
+            TempData["ContactBirthdate"] = _contact.BirthDate.ToShortDateString();
 
             TempData["ContactID"] = _contact.Id;
 
