@@ -29,11 +29,9 @@ namespace Mijem_test_app.Controllers
         {
             var _user = _context.Contacts.ToList();
 
-            ViewBag.ContactID = user.Contact.Id;
-
             foreach (var contact in _user)
             {
-                if (contact.Id == user.Contact.Id)
+                if (contact.ContactNumber == user.Contact.ContactNumber)
                 {
                     return RedirectToAction("NewReservation", "ReservationDates");
                 }
