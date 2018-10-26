@@ -1,0 +1,230 @@
+﻿@*TODO: perform server side validation and create store procedures
+TODO: implement validateForm in Proceed.cshtml -- for now just use html attribute 'required'
+TODO: implement saving to ReservationDate in Save() action in ReservationDatesController -- for now, just save as new location to avoid breaking
+TODO: Implement editing a reservation in ReservationDatesController
+TODO: demonstrate more ajax and use of knockout.js
+TODO: if venue booked, do not save
+TODO: add support for saving an image in textare*@
+
+
+
+@model IEnumerable<Mijem_test_app.Models.ReservationDate>
+@{
+    ViewBag.Title = "List of Reservations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .3s;
+    }
+
+        .pagination a.active {
+            background-color: dodgerblue;
+            color: white;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+
+</style>
+
+@using (Html.BeginForm("sortIndex", "ReservationDates", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+        <select class="form-control" name="sortBy" style="display:inline">
+            <option name="dateAscending" value="dateAscending">By Date Ascending</option>
+            <option name="dateDescending" value="dateDescending">By Date Descending</option>
+            <option name="alphaAscending" value="alphaAscending">By Alphabetic Ascending</option>
+            <option name="alphaDescending" value="alphaDescending">By Alphabetic Descending</option>
+            <option name="ranking" value="ranking">By Ranking</option>
+        </select>
+    <button style="background-color: rgba(0, 0, 0, 0); color:grey;" class="btn btn-default">Sort</button>
+}
+
+<div class="w3-container row" style="background-color:#fff;padding-top: 15px;">
+    <div class="column">
+        <h2 style="color: red; font-size:2em">Reservation List</h2>
+    </div>
+    <div class="column">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+    </div>
+    <div class="column">
+        <input type="button" value="Create Reservation" class="btn btn-primary column_button" onclick="@("window.location.href='" + @Url.Action("Proceed", "ReservationDates") + "'");" />
+    </div>
+</div>
+
+<table class="table table-bordered table-hover">
+    <tbody>
+        @foreach (var reservation in Model)
+        {
+            if (reservation.Deleted != true)
+            {
+                <tr>
+                    <td>
+                        <span class="name-td">@reservation.Reservation.Name</span>
+                        <span class="subtext-td">@reservation.ReservedDate</span>
+                    </td>
+                    <td>
+                        <span class="name-td">Ranking</span>
+                        <span class="subtext-td">
+                            @{
+                                switch (reservation.Reservation.Ranking)
+                                {
+                                    case 1:
+                                        <span class="row">
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/empty_star.gif" alt="Empty Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/empty_star.gif" alt="Empty Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/empty_star.gif" alt="Empty Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/empty_star.gif" alt="Empty Star" style="width: 100%">
+                                            </span>
+                                        </span>
+                                        break;
+                                    case 2:
+                                        <span class="row">
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/empty_star.gif" alt="Empty Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/empty_star.gif" alt="Empty Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/empty_star.gif" alt="Empty Star" style="width: 100%">
+                                            </span>
+                                        </span>
+                                        break;
+                                    case 3:
+                                        <span class="row">
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/empty_star.gif" alt="Empty Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/empty_star.gif" alt="Empty Star" style="width: 100%">
+                                            </span>
+                                        </span>
+                                        break;
+                                    case 4:
+                                        <span class="row">
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/empty_star.gif" alt="Empty Star" style="width: 100%">
+                                            </span>
+                                        </span>
+                                        break;
+                                    case 5:
+                                        <span class="row">
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                            <span class="column-stars">
+                                                <img src="~/Content/yellow_star.gif" alt="Yellow Star" style="width: 100%">
+                                            </span>
+                                        </span>
+                                        break;
+                                    default:
+                                        <text>No rating available</text>
+                                        break;
+                                }
+                            }
+                        </span>
+                    </td>
+                    <td>
+                        Added to Favorites
+                        <span style="white-space: nowrap;">
+                            @{
+                                if (@reservation.Reservation.Favorites)
+                                {
+                                    <img src="~/Content/asset_favorite_true.jpg" alt="Favorite"/>
+                                }
+                                else
+                                {
+                                    <img src="~/Content/asset_favorite_false.jpg" alt="Not Favorite"/>
+                                }
+                            }
+                        </span>
+                    </td>
+                    <td>
+                        <input type="button" id="@reservation.Id" value="Edit" class="btn btn-default column_button"
+                               onclick="@("window.location.href='" + @Url.Action("EditReservation", "ReservationDates", new {id = @reservation.Id}) + "'");"/>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+@if (ViewBag.Page > 0)
+{
+    <div class="pagination" style="float: left;">
+        <a href="@Url.Action("Index", new { page = ViewBag.Page - 1 })"
+           class="btn btn-default"
+           style="float: left;">
+            &laquo; Prev
+        </a>
+    </div>
+}
+@if (ViewBag.Page < ViewBag.MaxPage)
+{
+    <div class="pagination" style="float: right;">
+        <a href="@Url.Action("Index", new { page = ViewBag.Page + 1 })"
+           class="btn btn-default">
+            Next &raquo;
+        </a>
+    </div>
+}
+@*get rid of breaks if building compatibility for XHTML in the future*@
+<br /><br />
