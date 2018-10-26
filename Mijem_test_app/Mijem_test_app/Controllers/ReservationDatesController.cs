@@ -67,16 +67,28 @@ namespace Mijem_test_app.Controllers
         [HttpPost]
         public ActionResult Save(ReservationDate reservation)
         {
-            var _reservation = new ReservationDate
+            var _contactID = (int)TempData["ContactID"];
+
+            var _contact = _context.Contacts
+                .Single(r => r.Id == _contactID);
+
+            var _location = _context.Reservations
+                .Single(r => r.Name == reservation.Reservation.Name);
+
+            var _ReservedDate = (DateTime)TempData["BookDate"];
+
+            var _InfoFromTextBox = (string)TempData["InfoFromTextBox"];
+
+            var __reservation = new ReservationDate
             {
-                ReservedDate = (DateTime) TempData["BookDate"],
-                Contact = (Contact)TempData["ContactID"],
-                Reservation = (Reservation)TempData["Location"],
-                InfoFromTextBox = (string)TempData["InfoFromTextBox"],
+                ReservedDate = _ReservedDate,
+                Contact = _contact.Id,
+                Reservation = _location.Id,
+                InfoFromTextBox = _InfoFromTextBox,
                 Deleted = false
             };
             
-            _context.ReservationDates.Add(_reservation);
+            _context.ReservationDates.Add(__reservation);
 
             _context.SaveChanges();
 

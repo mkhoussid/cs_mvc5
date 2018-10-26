@@ -16,13 +16,16 @@ namespace Mijem_test_app.Models
         [StringLength(255)]
         [Display(Name = "Contact Name ...")]
         public string Name { get; set; }
+
         [Required]
         [StringLength(255)]
         [Display(Name = "Contact Type")]
         public string ContactType { get; set; }
+
         [Required]
         [Display(Name = "Phone:")]
         public long ContactNumber { get; set; }
+
         [Column(TypeName = "date")]
         [Display(Name = "Birthdate")]
         public DateTime BirthDate { get; set; }
