@@ -1,0 +1,134 @@
+﻿@model Mijem_test_app.Models.ReservationDate
+
+@{
+    ViewBag.Title = "Create a Reservation";
+    Layout = "~/Views/Shared/_LayoutReservation.cshtml";
+}
+
+
+
+
+<div class="w3-container row" style="background-color:#fff;padding-top: 15px; margin-bottom: 10px;">
+    <div class="column">
+        <h2 style="color: red; font-size:2em">Create a Reservation</h2>
+    </div>
+    <div class="column">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+    </div>
+    <div class="column">
+        <input type="button" value="Reservation List" class="btn btn-primary column_button" onclick="@("window.location.href='" + @Url.Action("Index", "ReservationDates") + "'");" />
+    </div>
+</div>
+
+
+
+@using (Html.BeginForm("ConfirmLocation", "ReservationDates", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "replaceContent()" }))
+{
+    <div class="row-contact" style="background-color:#fff;padding-top: 15px;">
+        <div>
+            @Html.EditorFor(m => m.Contact.Name, new
+            {
+                htmlAttributes =
+                                        new
+                                        {
+                                            @class = "form-control",
+                                            style = "background:#FFFFFF url(https://i.imgur.com/XVEmIjP.png) no-repeat 4px 4px;padding-left:30px;float: left;margin-right: 5px;",
+                                            placeholder = TempData.Peek("ContactName")
+                                        }
+            })
+        </div>
+        <div>
+            @Html.EditorFor(m => m.Contact.ContactType, new
+            {
+                htmlAttributes =
+                                        new
+                                        {
+                                            @class = "form-control",
+                                            list = "contactType",
+                                            name = "contactType",
+                                            style = "background:#FFFFFF url(https://i.imgur.com/Bchv5Vl.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 30%;margin-right: 5px;",
+                                            placeholder = TempData.Peek("ContactType")
+                                        }
+            })
+            <datalist id="contactType">
+                <option value="Home">
+                <option value="Cell">
+                <option value="Work">
+            </datalist>
+        </div>
+        <div>
+            @Html.EditorFor(m => m.Contact.ContactNumber, new
+            {
+                htmlAttributes =
+                                        new
+                                        {
+                                            @class = "form-control",
+                                            style = "background:#FFFFFF url(https://i.imgur.com/zPUpbEt.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 30%;margin-right: 5px;",
+                                            placeholder = TempData.Peek("ContactNumber"),
+                                            type = "tel"
+                                        }
+            })
+        </div>
+        <div>
+            @Html.EditorFor(m => m.Contact.BirthDate, new
+            {
+                htmlAttributes =
+                                        new
+                                        {
+                                            @class = "form-control",
+                                            @id = "datepicker",
+                                            name = "BirthDate",
+                                            style = "background:#FFFFFF url(https://i.imgur.com/Vpa8zkj.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 22.5%;",
+                                            placeholder = TempData.Peek("ContactBirthdate")
+                                        }
+            })
+        </div>
+    </div><br /><br /><br />
+    <div>
+        <textarea name="content" id="editor" required>Please add some details to this reservation...</textarea>
+    </div> <br/><br />
+    @Html.EditorFor(r => r.ReservedDate, new
+    {
+        htmlAttributes =
+            new
+            {
+                @class = "form-control",
+                @id = "datepicker_",
+                required = "required",
+                name = "ReservedDate",
+                style = "background:#FFFFFF url(https://i.imgur.com/Vpa8zkj.png) no-repeat 4px 4px;padding-left:30px;float: left;width: 25%;",
+                placeholder = "Choose Date"
+            }
+    })
+    @*@Html.HiddenFor(m => m.Id)*@
+    @Html.HiddenFor(m => m.InfoFromTextBox)
+    <button style="margin-top: 15px; float:right; background: red;" class="btn btn-success">Save</button>
+}<br /><br />
+
+<script>
+    $(function () {
+        $("#datepicker").datepicker();
+    });
+    $(function () {
+        $("#datepicker_").datepicker({
+            minDate: 0
+        });
+    });
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+            console.error(error);
+        });
+    replaceContent = () => {
+        var x = document.getElementsByTagName("P");
+        document.getElementById("InfoFromTextBox").value = x[1].innerHTML;
+    }
+</script>
+
+
+
+
+
