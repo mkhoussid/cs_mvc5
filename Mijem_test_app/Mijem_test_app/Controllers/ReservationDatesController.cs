@@ -70,13 +70,12 @@ namespace Mijem_test_app.Controllers
             var _reservation = new ReservationDate
             {
                 ReservedDate = (DateTime) TempData["BookDate"],
-                Contact_Id = TempData["ContactID"], //cannot resolve symbol Contact_Id
-                Reservation_Id = TempData["Location"], //cannot resolve symbol Reservation_Id
-                InfoFromTextBox = TempData["InfoFromTextBox"],
-                ImageURL_Id = 1, //cannot resolve symbol ImageURL_Id
+                Contact = (Contact)TempData["ContactID"],
+                Reservation = (Reservation)TempData["Location"],
+                InfoFromTextBox = (string)TempData["InfoFromTextBox"],
                 Deleted = false
             };
-
+            
             _context.ReservationDates.Add(_reservation);
 
             _context.SaveChanges();
